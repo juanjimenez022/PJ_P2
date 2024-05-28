@@ -9,13 +9,13 @@ public class PlayerController : MonoBehaviour
     private float vidaMaxima = 1000;
     private float regenTimer = 0f;
     private float regenInterval = 5f;
-    private float regenAmount = 50f;
+    private float regenAmount = 100f;
     public RoundManager rm;
     
 
     void Update()
     {
-        Debug.Log("Puesto: " + PlayerPrefs.GetInt("PrimerPuesto"));
+        //Debug.Log("Puesto: " + PlayerPrefs.GetInt("PrimerPuesto"));
 
         if (vidaActual > 0)
         {
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
             //terminar el juego
             
             PlayerPrefs.SetInt("NRondas", rm.GetRound());
-            Debug.Log("Numero Rondas" + rm.GetRound());
+            //Debug.Log("Numero Rondas" + rm.GetRound());
             SceneManager.LoadScene("Records");
 
 

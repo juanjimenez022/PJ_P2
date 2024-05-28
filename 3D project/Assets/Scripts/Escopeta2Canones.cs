@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Escopeta2Canones : MonoBehaviour
 {
-    public float range = 25, impactForce = 30f, fireRate = 150f;
-    public int damage = 75, maxAmmoLoad = 2, ammoLoad = 2, reloadTime = 1;
+    private float range = 30, impactForce = 30f, fireRate = 150f;
+    private int damage = 300, maxAmmoLoad = 2, ammoLoad = 2, reloadTime = 1;
     private bool Recargando = false;
     private float nextTimetoFire = 0f;
 
@@ -102,5 +102,10 @@ public class Escopeta2Canones : MonoBehaviour
         audioSource.volume = 0.1f;
         audioSource.Play();
 
+    }
+
+    public int GetAmmoLoad()
+    {
+        return ammoLoad;
     }
 }

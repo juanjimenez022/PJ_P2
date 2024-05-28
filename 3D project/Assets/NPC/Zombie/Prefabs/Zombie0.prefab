@@ -803,7 +803,7 @@ MonoBehaviour:
   dano: {fileID: 8300000, guid: 0547b940dba4d964e9e447af1dc0759a, type: 3}
   persigue: {fileID: 8300000, guid: e29d35a3561cf964e9c39f5b99c2696c, type: 3}
   strong: 25
-  maxHealth: 0
+  maxHealth: 150
   health: 150
   timeBetweenAttacks: 3
   sightRange: 20

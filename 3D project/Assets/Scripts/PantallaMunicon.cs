@@ -11,8 +11,8 @@ public class PantallaMunicon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        texto.text = "Munición de Escopeta: " + escopeta.ammoLoad + " / \u221E" + "\n" + 
-                     "Munición del PPSH-41: " + ppsh.ammoLoad + " / \u221E" + "\n" +
+        texto.text = "Munición de Escopeta: " + escopeta.GetAmmoLoad() + " / \u221E" + "\n" + 
+                     "Munición del PPSH-41: " + ppsh.GetAmmoLoad() + " / \u221E" + "\n" +
                      "Enemigos: " + RM.GetEnemies() + "\n" +
                      "Ronda: " + RM.GetRound() + "\n";
     }

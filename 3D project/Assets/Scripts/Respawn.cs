@@ -77,7 +77,7 @@ public class Respawn : MonoBehaviour
         for (int i = 0; i < NZ; i++)
         {
             this.strong = (Random.Range(1, 11) * 10);
-            this.health = ((Random.Range(2, 8) + 25) * 15);
+            this.health = ((Random.Range(10, 50)) * 10);
             CrearZombie();
         }
     }

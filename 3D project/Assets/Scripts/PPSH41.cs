@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PPSH41 : MonoBehaviour
 {
-    public float range = 300, impactForce = 5f, fireRate = 150f;
-    public int damage = 75, maxAmmoLoad = 71, ammoLoad = 71, reloadTime = 1;
+    private float range = 300, impactForce = 5f, fireRate = 150f;
+    private int damage = 75, maxAmmoLoad = 71, ammoLoad = 71, reloadTime = 1;
     private bool Recargando = false;
     private float nextTimetoFire = 0f;
 
@@ -99,5 +99,10 @@ public class PPSH41 : MonoBehaviour
         audioSource.volume = 0.1f;
         audioSource.Play();
 
+    }
+
+    public int GetAmmoLoad()
+    {
+        return ammoLoad;
     }
 }

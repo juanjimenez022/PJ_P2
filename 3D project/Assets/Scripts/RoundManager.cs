@@ -83,7 +83,7 @@ public class RoundManager : MonoBehaviour
     private void IncrementRound()
     {
         currentRound++;
-        Debug.Log("Round: " + currentRound);
+        //Debug.Log("Round: " + currentRound);
     }
 
     private void StartNewRound()
@@ -134,8 +134,9 @@ public class RoundManager : MonoBehaviour
                 nextRoundStrong = bestDistanceZombie.strong;
             }
 
-            Debug.Log("Next round health: " + nextRoundHealth);
-            Debug.Log("Next round strong: " + nextRoundStrong);
+            Debug.Log("Evaluación terminada...");
+            Debug.Log("Vida Genetica: " + nextRoundHealth);
+            Debug.Log("Fuerza Genetica:" + nextRoundStrong);
         }
     }
 

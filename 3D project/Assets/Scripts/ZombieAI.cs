@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 public class ZombieAI : MonoBehaviour
 {
     public AudioClip patrulla;
@@ -7,8 +8,8 @@ public class ZombieAI : MonoBehaviour
     public AudioClip muere;
     public AudioClip dano;
     public AudioClip persigue;
-    public int strong = 25;
-    public float maxHealth;
+    private int strong;
+    private float maxHealth;
     public float health, timeBetweenAttacks, sightRange, attackRange;
 
     private float timeAlive;
@@ -203,6 +204,7 @@ public class ZombieAI : MonoBehaviour
             animator.SetBool("Following", false);
             animator.SetBool("Running", false);
             health -= damage;
+            StartCoroutine(Immobilize(2f));
         }
 
     }
@@ -210,11 +212,11 @@ public class ZombieAI : MonoBehaviour
     {
         reproducirAudio(muere);
         RoundManager.Instance.ZombieMuerto();
-        Debug.Log("Destroying Zombie with Health: " + maxHealth + ", Strong: " + strong + ", TimeAlive: " + timeAlive + ", ClosestDistanceToPlayer: " + closestDistanceToPlayer);
+        //Debug.Log("Destroying Zombie with Health: " + maxHealth + ", Strong: " + strong + ", TimeAlive: " + timeAlive + ", ClosestDistanceToPlayer: " + closestDistanceToPlayer);
         RoundManager.Instance.AddDeadZombieData(new ZombieData(strong, maxHealth, timeAlive, closestDistanceToPlayer));
 
-        Debug.Log("Zombie time alive: " + timeAlive);
-        Debug.Log("Closest distance to player: " + closestDistanceToPlayer);
+        //Debug.Log("Zombie time alive: " + timeAlive);
+        //Debug.Log("Closest distance to player: " + closestDistanceToPlayer);
 
         //Destroy(gameObject);
         animator.SetBool("Dead", true);
@@ -232,6 +234,13 @@ public class ZombieAI : MonoBehaviour
         // Opci�n para destruir el objeto despu�s de un tiempo
         Destroy(gameObject, 5f); // Ajusta el tiempo si es necesario
 
+    }
+
+    private IEnumerator Immobilize(float duration)
+    {
+        agent.enabled = false; // Disable the NavMeshAgent
+        yield return new WaitForSeconds(duration); // Wait for the specified duration
+        agent.enabled = true; // Re-enable the NavMeshAgent
     }
 
     private void LookAtPlayerYAxis()
