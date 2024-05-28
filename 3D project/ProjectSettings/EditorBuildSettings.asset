@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Map_v2.unity
+    guid: 6f459ef6d307b3245b4abd9d6cd38a73
+  - enabled: 1
+    path: Assets/Scenes/BrilloSelect.unity
+    guid: 34e1ff97e4a35fa409c872db7cb1a988
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e28cff9e84a8dce499fc27189bf87dc4
+  - enabled: 1
+    path: Assets/Scenes/Opciones.unity
+    guid: 30416e6964608e641b5983f864543fe2
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 170968d8ef12aaa4aa1723612b77247b
+  - enabled: 1
+    path: Assets/Scenes/Records.unity
+    guid: 6d81a9f1e3662e74086bc67009aa98b9
+  m_configObjects: {}
